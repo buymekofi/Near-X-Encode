@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "asbuild:untouched": "asc assembly/index.ts --target debug",
+    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "build": "asb",
+    "deploy": "near dev-deploy build/release/buy-coffee-contract.wasm",
+    "dev": "npm run build && npm run deploy",
+    "test": "asp"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.19.23",
+    "@testing-library/jest-dom": "^5.16.2",
+    "asbuild": "^0.2.0",
+    "assemblyscript": "^0.19.23",
+    "near-api-js": "^0.44.2",
+    "near-cli": "^3.2.0",
+    "near-sdk-as": "^3.2.3",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.19.23"
+  }
+}
