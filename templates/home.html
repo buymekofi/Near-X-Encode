@@ -307,7 +307,7 @@
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    <button type="submit" id="=registerbtn" class="btn btn-primary btn-lg">Submit</button>
                   </div>
 
                 </form>
@@ -340,7 +340,47 @@
 </footer>
 
 {% block javascript %}   
-<script>     
+<script>
+            name = username.toLowerCase();
+            const CONTRACT_ID = "buymekofi.testnet";
+            // connect to NEAR
+            const near = new nearApi.Near({
+              keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore(),
+            networkId: 'testnet',
+            nodeUrl: 'https://rpc.testnet.near.org',
+            walletUrl: 'https://wallet.testnet.near.org'
+            });
+
+            // connect to the NEAR Wallet
+            const wallet = new nearApi.WalletConnection(near, 'Buy a coffee dapp');
+
+            // connect to a NEAR smart contract
+            const contract = new nearApi.Contract(wallet.account(), CONTRACT_ID, {
+              viewMethods: [''],
+            changeMethods: ['buy_coffee_for', 'register', 'change_account']
+            });
+
+            const button = document.getElementById('registerbtn');
+            if (!wallet.isSignedIn()) {
+              button.textContent = 'SignIn with NEAR'
+            }
+
+            // Either sign in or buy coffee change method on button click
+            document.getElementById('registerbtn').addEventListener('click', () => {
+              let name = document.getElementById(username).value;
+            if (wallet.isSignedIn()) {
+              contract.register({
+
+                args: { name },
+              })
+            } else {
+              wallet.requestSignIn({
+                contractId: CONTRACT_ID,
+                methodNames: ['register', 'buy_coffee_for', 'change_account']
+              });
+                }
+            });
+
    $("#id_username").change(function () {       
       var username = $(this).val();        
       $.ajax({        
