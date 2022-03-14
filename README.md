@@ -18,5 +18,6 @@ npm run dev
 ### Run the django server
 Make sure you have `python` and `Django` install then run
 ```bash
+cd ..
 python manage.py runserver
 ```
