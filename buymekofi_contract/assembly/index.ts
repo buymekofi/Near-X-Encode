@@ -1,27 +1,28 @@
 // contract/assembly/index.ts
-import { user_account } from "./model";
-import { context, ContractPromiseBatch, u128} from "near-sdk-as";
+// import { Transaction } from "./model";
+import { parseNearAmount } from "near-api-js/lib/utils/format";
+import { context, ContractPromiseBatch, logging, u128 } from "near-sdk-as";
 
 const zero = new u128(0);
+// const Transactions = Array.create<Transaction>(0);
 
-export function buy_coffee_for(name: string): string {
-    assert(user_account.contains(name), "user does not exist!");
-    assert(context.attachedDeposit > zero, "amount must be greater than zero!"); 
+export function buy_coffee_for(account_id: string): void {
     let amount = context.attachedDeposit;
-    const to_sender = ContractPromiseBatch.create(user_account.getSome(name));
+    assert(amount > zero, "Amount must be greater than 0!");
+    const to_sender = ContractPromiseBatch.create(account_id);
     to_sender.transfer(amount);
-    return 'success';
+    logging.log(`${context.sender} just sent ${ amount } yocto near to ${account_id}!`);
 }
 
-export function register(name: string): string {
-    user_account.set(name, context.sender);
-    return 'success';
-}
+// export function register(name: string): string {
+//     user_account.set(name, context.sender);
+//     return 'success';
+// }
 
-export function change_account(name:string, account_id: string): string {
-    assert(user_account.contains(name), 'user does not exist!');
-    assert(user_account.getSome(name) == context.sender, "cannot change name for others!");
-    user_account.set(name, account_id);
-    return 'success';
-}
+// export function change_account(name:string, account_id: string): string {
+//     assert(user_account.contains(name), 'user does not exist!');
+//     assert(user_account.getSome(name) == context.sender, "cannot change name for others!");
+//     user_account.set(name, account_id);
+//     return 'success';
+// }
 

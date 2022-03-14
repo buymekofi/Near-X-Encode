@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/30/000000/external-cup-fast-food-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="icon" type="image/x-icon"
+    href="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/30/000000/external-cup-fast-food-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@1,700&display=swap" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <style>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/near-api-js@0.41.0/dist/near-api-js.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+
+  <style>
     .donation-margin {
       margin-top: 64px;
       margin-bottom: 36px;
@@ -54,100 +59,104 @@
     }
 
     .footer {
-	  margin-top: 80px;
+      margin-top: 80px;
     }
 
-  	.footer__redes-wrapper {
-		display: flex;
-		justify-content: center;
-		gap: 40px;
-		flex-wrap: wrap;
-		max-width: 600px;
-		margin: 45px auto;
+    .footer__redes-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 600px;
+      margin: 45px auto;
     }
 
     li {
-        display: inline-block;
+      display: inline-block;
     }
 
-	.footer__link {
-		text-transform: uppercase;
-		font-family: var(--title-font);
-		font-size: rem(14);
-	}
+    .footer__link {
+      text-transform: uppercase;
+      font-family: var(--title-font);
+      font-size: rem(14);
+    }
 
-	.fab {
-		margin-right: 8px;
-	}
+    .fab {
+      margin-right: 8px;
+    }
 
-	.footer__texto {
-		color: var(--light-gray);
-		text-align: center;
-        font-weight: 300;
-	}
+    .footer__texto {
+      color: var(--light-gray);
+      text-align: center;
+      font-weight: 300;
+    }
 
-  .footer__icon {
-		color: #fff;
-		width: 50px;
-		height: 50px;
-	}
-
-
+    .footer__icon {
+      color: #fff;
+      width: 50px;
+      height: 50px;
+    }
   </style>
 
-    <script src="https://kit.fontawesome.com/f219becbba.js" crossorigin="anonymous"></script>
-    <title>BuyMeKofi</title>
+  <script src="https://kit.fontawesome.com/f219becbba.js" crossorigin="anonymous"></script>
+  <title>BuyMeKofi</title>
+
 </head>
+
 <body>
-   
-    <nav class="navbar navbar-expand-md navbar-light bg-white">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><i><img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/30/000000/external-cup-fast-food-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"/></i></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item li-color">
-                      <a class="nav-link" href="#">Home </i></a>
-                    </li>
-                </ul>
-                <div>
-                  <a style="color:black;border-radius: 50px" class="btn btn-warning" href="#profile" > <strong style="font-weight: 550;">Create your Profile</strong> </a>
-                </div>
-            </div>
-            </div>
-          </div>
-        </div>
-          
-      
-    </nav>
 
-
-    <section class="text-light p-5 text-start mb-5" style="background: #f36b54;" >
-
-      <div class="container">
-        <div class="card-group d-flex flex-column flex-md-row">
-          
-          <div class="card m-2" style="background: #f36b54;border: 0px">
-            <div class="card-body">
-              <p class="text display-4 fw-bolder" style="color:rgb(49, 46, 46)"><b>BuyMeKofi</b></p>
-              <p my-4><b> Get your audience support in $NEAR Tokens.</b></p>
-              <p class="my-4">               
-              <a style="border-radius: 50px;width:200px;" class="btn btn-lg btn-success" href="#profile"> Get Started </a>
-              </p>
-            </div>
-          </div>
-    
-          <div class="card m-2" style="border: 0px">
-            <img  class="img-fluid " src="https://raw.githubusercontent.com/buymekofi/Near-X-Encode/main/static/images/banner.jpg" alt="...">
-          </div>
+  <nav class="navbar navbar-expand-md navbar-light bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i><img
+            src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/30/000000/external-cup-fast-food-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png" /></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item li-color">
+            <a class="nav-link" href="#">Home </i></a>
+          </li>
+        </ul>
+        <div>
+          <a style="color:black;border-radius: 50px" class="btn btn-warning" href="#profile"> <strong
+              style="font-weight: 550;">Create your Profile</strong> </a>
         </div>
       </div>
-    
-    </section>
+    </div>
+    </div>
+    </div>
 
 
-<!-- section of Search creators 
+  </nav>
+
+
+  <section class="text-light p-5 text-start mb-5" style="background: #f36b54;">
+
+    <div class="container">
+      <div class="card-group d-flex flex-column flex-md-row">
+
+        <div class="card m-2" style="background: #f36b54;border: 0px">
+          <div class="card-body">
+            <p class="text display-4 fw-bolder" style="color:rgb(49, 46, 46)"><b>BuyMeKofi</b></p>
+            <p my-4><b> Get your audience support in $NEAR Tokens.</b></p>
+            <p class="my-4">
+              <button id="registerbtn" style="border-radius: 50px;width:200px;" class="btn btn-lg btn-success"> Get
+                Started </button>
+            </p>
+          </div>
+        </div>
+
+        <div class="card m-2" style="border: 0px">
+          <img class="img-fluid " src="{% static 'images/banner.jpg' %}" alt="...">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- section of Search creators 
 
     <section class="my-5">
       
@@ -163,242 +172,169 @@
     </section>
 -->
 
-<section>
-  
-  <div class="donation-margin">
-    <div class="donation-padding">
-      <div class="container">
-      <div class="donations">
-        <div class="donations__container">
-          <div class="donations__memberships">
-            <div class="donations__container">
+  <section>
 
-              <div class="donations__title"> <strong>How does it work?</strong> </div>
+    <div class="donation-margin">
+      <div class="donation-padding">
+        <div class="container">
+          <div class="donations">
+            <div class="donations__container">
+              <div class="donations__memberships">
+                <div class="donations__container">
+
+                  <div class="donations__title"> <strong>How does it work?</strong> </div>
+
+                  <div class="dontaions__information">
+                    Buy Me Kofi makes supporting fun and easy. In just a couple of taps, your supporters can make the
+                    donations. They don't even have to create an account!
+                  </div>
+                </div>
+                <div class="donations__container-image">
+                  <br>
+                </div>
+              </div>
+
+              <div class="donations__title"><strong>Accepting Donations</strong></div>
 
               <div class="dontaions__information">
-                Buy Me Kofi makes supporting fun and easy. In just a couple of taps, your supporters can make the donations. They don't even have to create an account!
+                Through cryptocurrencies like NEAR, the audience from all around the globe can show their support by
+                making payments in a quick and hassle-free manner with low gas fees.
+              </div>
+              <div class="donations__container-image">
+                <br>
+              </div>
+              <div class="donations__title"><strong>OUR NEXT STEPS</strong></div>
+
+              <div class="dontaions__information">
+                To Introduce Subscriptions,where Creators can earn a recurring income by accepting monthly or yearly
+                membership. Share exclusive content, or just give them a way to support your work on an ongiong basis.
               </div>
             </div>
-            <div class="donations__container-image">
-              <br>
-            </div>
-          </div>
 
-          <div class="donations__title"><strong>Accepting Donations</strong></div>
-
-          <div class="dontaions__information">
-            Through cryptocurrencies like NEAR, the audience from all around the globe can show their support by making payments in a quick and hassle-free manner with low gas fees.
           </div>
           <div class="donations__container-image">
-              <br>
+            <br>
           </div>
-          <div class="donations__title"><strong>OUR NEXT STEPS</strong></div>
-
-          <div class="dontaions__information">
-            To Introduce Subscriptions,where Creators can earn a recurring income by accepting monthly or yearly membership. Share exclusive content, or just give them a way to support your work on an ongiong basis.
-          </div>
-        </div>
 
         </div>
-        <div class="donations__container-image">
-          <br>
-        </div>
-      
-      </div>
-      
-    </div>
-    </div>
-  </div>
-</div>
-<br><br>
-</section>
 
-<!-- section of FEATURES
-    <section>
-      <div class="container">
-        <div class="card border-white">
-          <div class="card-body">
-          <h1 class="text-center my-5">Why NEAR?</h1>
-           <p class="lead text-center my-5">Through cryptocurrencies like NEAR the creators can accept payments from global audience in a quick and hassle-free manner with low gas fees.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-      <section>
-        <div class="container">
-          <div class="card border-white">
-            <div class="card-body">
-            <h1 class="text-center my-5">How are we different?</h1>
-             <p class="lead text-center my-5">Unlike the traditional platforms that support FIAT currencies and levy hectic charges on users, we have developed the application to support crypto currencies like NEAR.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    -->
-<!-- section of form
-  <div class="container">
-    <h1 class="text-center my-5">Enter your details</h1>
-    <p class="lead text-center my-5">               
-    </p>
-    <center>
-    <div>
-    <form method="post" action="{% url 'validate' %}" enctype='multipart/form-data'>
-      {% csrf_token %}
-      <input type="text" id="username" name="username-id" placeholder="Username *" required>
-      <br> <br>
-      <input type="text" id="wallet-address" name="wallet-address"   placeholder="Wallet *" required>
-      <br> <br>
-      <textarea id="about" name="about" placeholder="About yourself"></textarea>
-      <br> <br>
-      <input type="text" id="youtube" name="youtube" placeholder="Social Handle" required>
-      <br> <br>
-      <input type="submit">
-  </form>
-  </div>
-  </center>
-  </div>
-</section>
--->
-
-<section class="vh-100" style="background-color: #eee;">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                <section id="profile">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create Profile</p>
-
-                <form method="post" action="{% url 'validate' %}" enctype='multipart/form-data' class="mx-1 mx-md-4">
-                  {% csrf_token %}
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="username" name="username-id" class="form-control" placeholder="Username" required>
-                    
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="wallet-address" name="wallet-address" class="form-control" placeholder="NEAR Wallet" required>
-                  
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    
-                    <div class="form-outline flex-fill mb-0">
-                      <textarea id="about" name="about" class="form-control" placeholder="About yourself"></textarea>
-
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="youtube" name="youtube" class="form-control" placeholder="Social Handle" required>
-
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" id="=registerbtn" class="btn btn-primary btn-lg">Submit</button>
-                  </div>
-
-                </form>
-              
-              </div>
-              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
-
-              </div>
-            </section>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-</section>
+    </div>
+    </div>
+    <br><br>
+  </section>
 
-<footer>
+
+
+  <section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <section id="profile">
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create Profile</p>
+
+                    <form method="post" action="{% url 'validate' %}" enctype='multipart/form-data'
+                      class="mx-1 mx-md-4">
+                      {% csrf_token %}
+                      <div class="d-flex flex-row align-items-center mb-4">
+
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" id="username" name="username-id" class="form-control"
+                            placeholder="Username" required>
+
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" id="wallet-address" name="wallet-address" class="form-control"
+                            placeholder="NEAR Wallet" required>
+
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+
+                        <div class="form-outline flex-fill mb-0">
+                          <textarea id="about" name="about" class="form-control"
+                            placeholder="About yourself"></textarea>
+
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" id="youtube" name="youtube" class="form-control"
+                            placeholder="Social Handle" required>
+
+                        </div>
+                      </div>
+
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="submit" id="register" onclick="register()"
+                          class="btn btn-primary btn-lg">Submit</button>
+                      </div>
+
+                    </form>
+
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+
+                </div>
+  </section>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <footer>
     <br>
     <center>
-        <table>
-            <col>
-                <p><strong style="font-weight: 550">BuyMeKofi</strong></p>
-            </col>
-        </table>
+      <table>
+        <col>
+        <p><strong style="font-weight: 550">BuyMeKofi</strong></p>
+        </col>
+      </table>
     </center>
-  <center> <p class="footer__texto" style="font-size:12px">Copyright @ 2022</p></center>
-</footer>
+    <center>
+      <p class="footer__texto" style="font-size:12px">Copyright @ 2022</p>
+    </center>
+  </footer>
 
-{% block javascript %}   
-<script>
-            name = username.toLowerCase();
-            const CONTRACT_ID = "buymekofi.testnet";
-            // connect to NEAR
-            const near = new nearApi.Near({
-              keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore(),
-            networkId: 'testnet',
-            nodeUrl: 'https://rpc.testnet.near.org',
-            walletUrl: 'https://wallet.testnet.near.org'
-            });
-
-            // connect to the NEAR Wallet
-            const wallet = new nearApi.WalletConnection(near, 'Buy a coffee dapp');
-
-            // connect to a NEAR smart contract
-            const contract = new nearApi.Contract(wallet.account(), CONTRACT_ID, {
-              viewMethods: [''],
-            changeMethods: ['buy_coffee_for', 'register', 'change_account']
-            });
-
-            const button = document.getElementById('registerbtn');
-            if (!wallet.isSignedIn()) {
-              button.textContent = 'SignIn with NEAR'
-            }
-
-            // Either sign in or buy coffee change method on button click
-            document.getElementById('registerbtn').addEventListener('click', () => {
-              let name = document.getElementById(username).value;
-            if (wallet.isSignedIn()) {
-              contract.register({
-
-                args: { name },
-              })
-            } else {
-              wallet.requestSignIn({
-                contractId: CONTRACT_ID,
-                methodNames: ['register', 'buy_coffee_for', 'change_account']
-              });
-                }
-            });
-
-   $("#id_username").change(function () {       
-      var username = $(this).val();        
-      $.ajax({        
-            url: '/check_username/',         
-            data: {           
-                'username': username          
-            },         
-            dataType: 'json',            
-            success: function (data) {           
-                 if (data.username_exists) {             
-                 alert("Username already taken");
-                 }         
-            }       
-      });      
-   });   
-</script> 
-{% endblock %}
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
+
+<script>
+
+  $('#username').on('change', function () {
+    var username = $(this).val();
+    console.log("...")
+    $.ajax({
+      url: 'check_username/',
+      data: {
+        'username': username
+      },
+      dataType: 'json',
+      success: function (data) {
+        if (data.username) {
+          alert("Username already taken");
+        }
+      }
+    });
+  });
+
+</script>
+
 </html>
